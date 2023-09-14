@@ -1,42 +1,47 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <string.h>
 #include<locale.h>
-
-#define m 10
-#define n 10
 
 int main () 
 {
-	setlocale(LC_ALL, "rus");
+	setlocale (LC_CTYPE,"Russian");
 
-	int mas[m][n], res = 0;
-
-	srand(time(0));
-
-	for (int i = 0; i < m; i++)
+	struct student 
 	{
-		for (int j = 0; j < n; j++)
-		{
-			mas[i][j] = rand() % 100;
-			printf("%3d ", mas[i][j]);
-		}
-		printf("\n");
-	}
-	printf("\n");
+		char surname[15];
+		char name[15];
+		int age;
+		char falucty[15];
+	}stud[3];
 
+	char person[15];
+	for (int i = 0; i < 3; i++)
+	{
+		printf("Введите фамилию студента: \n");
+		scanf("%s", &stud[i].surname);
+		printf("\nВведите имя студента: \n");
+		scanf("%s", &stud[i].name);
+		printf("\nВведите возраст студента: \n");
+		scanf("%d", &stud[i].age);
+		printf("\nВведите факультет студента: \n");
+		scanf("%s", &stud[i].falucty);
+	}
+
+	printf("Введите фамилию студента, для поиска: \n");
+	scanf("%s", person);
 	
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < n; j++)
+		if (strcmp(person, stud[i].surname) == 0)
 		{
-			res += mas[i][j];
+			printf("Фамилия: %s\n", stud[i].surname);
+			printf("Имя: %s\n", stud[i].name);
+			printf("Возраст: %d\n", stud[i].age);
+			printf("Факультет: %s\n", stud[i].falucty);
+			return 0;
 		}
-		printf("\n");
-		printf("%2d строка, сумма = %d", i + 1, res);
-		res = 0;
+		else
+			printf("Нет такого пользователя!");
 	}
-	printf("\n");
-
 	return 0;
 }
