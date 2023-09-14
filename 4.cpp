@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include<locale.h>
+#include <locale.h>
 
 #define m 10
 #define n 10
@@ -33,7 +33,7 @@ int main4 ()
 			res += mas[i][j];
 		}
 		printf("\n");
-		printf("%d строка, сумма = %d", i + 1, res);
+		printf("%2d строка, сумма = %d", i + 1, res);
 		res = 0;
 	}
 	printf("\n");

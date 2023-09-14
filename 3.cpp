@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <malloc.h>
-#include<locale.h>
+#include <locale.h>
 
 int main3 () 
 {
