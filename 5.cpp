@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include<locale.h>
+#include <stdlib.h>
+#define h 3
 
 int main () 
 {
+	int s = 0;
 	setlocale (LC_CTYPE,"Russian");
 
 	struct student 
@@ -12,10 +15,10 @@ int main ()
 		char name[15];
 		int age;
 		char falucty[15];
-	}stud[3];
+	}stud[h];
 
 	char person[15];
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < h; i++)
 	{
 		printf("Введите фамилию студента: \n");
 		scanf("%s", &stud[i].surname);
@@ -27,10 +30,10 @@ int main ()
 		scanf("%s", &stud[i].falucty);
 	}
 
-	printf("Введите фамилию студента, для поиска: \n");
+	printf("Введите фамилию ,имя, возраст, факультет студента, для поиска: \n");
 	scanf("%s", person);
 	
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < h; i++)
 	{
 		if (strcmp(person, stud[i].surname) == 0)
 		{
@@ -38,10 +41,34 @@ int main ()
 			printf("Имя: %s\n", stud[i].name);
 			printf("Возраст: %d\n", stud[i].age);
 			printf("Факультет: %s\n", stud[i].falucty);
-			return 0;
+		}
+		if (strcmp(person, stud[i].name) == 0)
+		{
+			printf("Фамилия: %s\n", stud[i].surname);
+			printf("Имя: %s\n", stud[i].name);
+			printf("Возраст: %d\n", stud[i].age);
+			printf("Факультет: %s\n", stud[i].falucty);
+		}
+		if (atoi(person) == stud[i].age)
+		{
+			printf("Фамилия: %s\n", stud[i].surname);
+			printf("Имя: %s\n", stud[i].name);
+			printf("Возраст: %d\n", stud[i].age);
+			printf("Факультет: %s\n", stud[i].falucty);
+		}
+		if (strcmp(person, stud[i].falucty) == 0)
+		{
+			printf("Фамилия: %s\n", stud[i].surname);
+			printf("Имя: %s\n", stud[i].name);
+			printf("Возраст: %d\n", stud[i].age);
+			printf("Факультет: %s\n", stud[i].falucty);
 		}
 		else
-			printf("Нет такого пользователя!");
+		{
+			s++;		
+		}
 	}
+	if (s == h)
+		printf("Такого студента нет!\n");
 	return 0;
 }

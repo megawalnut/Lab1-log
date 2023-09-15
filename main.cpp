@@ -10,7 +10,7 @@ int main5 ()
 
 	for (int i = 0; i < 10; i++)
 	{
-		mas[i] = rand() % 100;
+		mas[i] = rand() % 100 -50;
 		printf("%d ", mas[i]);
 	}
 	printf("\n");

@@ -18,7 +18,7 @@ int main4 ()
 	{
 		for (int j = 0; j < n; j++)
 		{
-			mas[i][j] = rand() % 100;
+			mas[i][j] = rand() % 100 -50;
 			printf("%3d ", mas[i][j]);
 		}
 		printf("\n");
