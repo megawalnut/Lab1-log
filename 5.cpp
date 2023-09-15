@@ -41,6 +41,7 @@ int main ()
 			printf("Имя: %s\n", stud[i].name);
 			printf("Возраст: %d\n", stud[i].age);
 			printf("Факультет: %s\n", stud[i].falucty);
+			s++;
 		}
 		if (strcmp(person, stud[i].name) == 0)
 		{
@@ -48,6 +49,7 @@ int main ()
 			printf("Имя: %s\n", stud[i].name);
 			printf("Возраст: %d\n", stud[i].age);
 			printf("Факультет: %s\n", stud[i].falucty);
+			s++;
 		}
 		if (atoi(person) == stud[i].age)
 		{
@@ -55,6 +57,7 @@ int main ()
 			printf("Имя: %s\n", stud[i].name);
 			printf("Возраст: %d\n", stud[i].age);
 			printf("Факультет: %s\n", stud[i].falucty);
+			s++;
 		}
 		if (strcmp(person, stud[i].falucty) == 0)
 		{
@@ -62,13 +65,10 @@ int main ()
 			printf("Имя: %s\n", stud[i].name);
 			printf("Возраст: %d\n", stud[i].age);
 			printf("Факультет: %s\n", stud[i].falucty);
-		}
-		else
-		{
-			s++;		
-		}
+			s++;
+		}	
 	}
-	if (s == h)
+	if (s == 0)
 		printf("Такого студента нет!\n");
 	return 0;
 }

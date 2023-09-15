@@ -4,7 +4,7 @@
 #include <malloc.h>
 #include <locale.h>
 
-int main3 () 
+int main3() 
 {
 	setlocale(LC_ALL, "rus");
 
